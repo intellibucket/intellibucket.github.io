@@ -158,6 +158,17 @@ em { color: var(--lime); font-family: Georgia, serif; font-weight: 400; }
 .glyph-show { transform: rotate(45deg); }.glyph-show::before { inset: 32%; }.glyph-show::after { background: var(--ink); inset: 42%; }
 .use-grid h3 { font-size: 25px; font-weight: 550; letter-spacing: -.04em; margin: 0 0 12px; }
 .use-grid p { line-height: 1.55; margin: 0; max-width: 340px; opacity: .58; }
+.app-gallery { background: #060d0a; color: var(--paper); overflow: hidden; padding: clamp(90px,10vw,150px) 0 78px; }
+.gallery-heading { align-items: end; display: grid; gap: 60px; grid-template-columns: 1.1fr .9fr; padding: 0 clamp(22px,4vw,64px); }
+.gallery-heading h2 { font-size: clamp(50px,6.8vw,106px); font-weight: 540; letter-spacing: -.07em; line-height: .91; margin: 36px 0 0; }
+.gallery-heading > p { color: rgba(241,241,232,.62); font-size: 17px; line-height: 1.6; margin: 0 0 8px; max-width: 520px; }
+.gallery-rail { display: grid; gap: clamp(18px,2.2vw,34px); grid-auto-columns: minmax(270px, 24vw); grid-auto-flow: column; margin-top: 82px; overflow-x: auto; overscroll-behavior-inline: contain; padding: 0 clamp(22px,4vw,64px) 30px; scroll-padding-inline: clamp(22px,4vw,64px); scroll-snap-type: inline mandatory; scrollbar-color: var(--lime) rgba(241,241,232,.12); scrollbar-width: thin; }
+.app-shot { margin: 0; scroll-snap-align: start; }
+.shot-index { align-items: center; display: flex; font: 9px var(--font-geist-mono), monospace; justify-content: space-between; letter-spacing: .1em; margin-bottom: 14px; opacity: .58; text-transform: uppercase; }
+.shot-frame { background: #151d19; border: 1px solid rgba(241,241,232,.22); border-radius: clamp(26px,2.5vw,42px); box-shadow: 0 30px 70px rgba(0,0,0,.34); overflow: hidden; padding: 7px; }
+.shot-frame img { background: #0e1110; border-radius: clamp(20px,2.1vw,35px); display: block; height: auto; width: 100%; }
+.gallery-hint { align-items: center; display: flex; font: 9px var(--font-geist-mono), monospace; justify-content: space-between; letter-spacing: .1em; margin: 10px clamp(22px,4vw,64px) 0; opacity: .5; text-transform: uppercase; }
+.gallery-hint b { font-size: 22px; font-weight: 400; }
 .availability { background: var(--blue); color: var(--white); display: grid; gap: 80px; grid-template-columns: 1.1fr .9fr; padding: clamp(90px,10vw,160px) clamp(22px,4vw,64px); }
 .availability h2 { font-size: clamp(50px,6vw,96px); font-weight: 540; letter-spacing: -.07em; line-height: .93; margin: 42px 0 0; }
 .store-stack { align-self: end; }
@@ -244,6 +255,10 @@ em { color: var(--lime); font-family: Georgia, serif; font-weight: 400; }
   .use-grid article { border-bottom: 1px solid var(--line-dark); border-right: 0; min-height: 360px; }
   .use-glyph { margin-bottom: 45px; margin-top: 40px; }
   .availability { gap: 80px; padding-left: 18px; padding-right: 18px; }
+  .gallery-heading { grid-template-columns: 1fr; padding-left: 18px; padding-right: 18px; }
+  .gallery-heading h2 { font-size: 54px; }
+  .gallery-rail { grid-auto-columns: minmax(245px, 76vw); margin-top: 58px; padding-left: 18px; padding-right: 18px; scroll-padding-inline: 18px; }
+  .gallery-hint { margin-left: 18px; margin-right: 18px; }
   .policy-strip { align-items: flex-start; flex-direction: column; gap: 25px; padding-left: 18px; padding-right: 18px; }
   .policy-strip > div { align-items: flex-start; flex-direction: column; gap: 16px; }
   .legal-hero { gap: 32px; min-height: 570px; padding: 80px 18px 56px; }

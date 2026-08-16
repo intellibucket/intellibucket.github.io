@@ -47,7 +47,11 @@ test("server-renders product and legal routes", async () => {
     assert.equal(response.status, 200);
   }
 
-  assert.match(await productResponse.text(), /Your screen stays on\. You stay in flow\./);
+  const productHtml = await productResponse.text();
+  assert.match(productHtml, /Your screen stays on\. You stay in flow\./);
+  assert.match(productHtml, /Inside the app/);
+  assert.match(productHtml, /always_awake\/screenshots\/home_on\.jpeg/);
+  assert.match(productHtml, /always_awake\/screenshots\/settings_dark\.jpeg/);
   assert.match(await privacyResponse.text(), /Privacy policy/);
   assert.match(await termsResponse.text(), /Terms &amp; conditions/);
 });

@@ -25,6 +25,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const product = getProduct((await params).product);
   if (!product) notFound();
   const isLive = product.status === "Available";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const screenshots = [
+    { file: "home_on.jpeg", label: "Awake / Light" },
+    { file: "home_on_dark.jpeg", label: "Awake / Dark" },
+    { file: "home_off.jpeg", label: "Ready / Light" },
+    { file: "home_off_dark.jpeg", label: "Ready / Dark" },
+    { file: "rules.jpeg", label: "Rules / Light" },
+    { file: "rules_dark.jpeg", label: "Rules / Dark" },
+    { file: "settings.jpeg", label: "Settings / Light" },
+    { file: "settings_dark.jpeg", label: "Settings / Dark" },
+  ];
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -95,6 +106,34 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <article><span>02</span><i className="use-glyph glyph-move" /><h3>Cook & move</h3><p>Follow a recipe or workout without reaching back for the screen.</p></article>
               <article><span>03</span><i className="use-glyph glyph-show" /><h3>Demo & display</h3><p>Let a screen stay useful during presentations, counters, and demos.</p></article>
             </div>
+          </section>
+
+          <section className="app-gallery" aria-labelledby="app-gallery-title">
+            <div className="gallery-heading">
+              <div>
+                <span className="kicker"><i /> Inside the app</span>
+                <h2 id="app-gallery-title">Clear in the light.<br /><em>Quiet in the dark.</em></h2>
+              </div>
+              <p>One focused control, practical rules, and the settings that matter. Swipe through the real Always Awake interface.</p>
+            </div>
+            <div className="gallery-rail" aria-label="Always Awake app screenshots">
+              {screenshots.map((screenshot, index) => (
+                <figure className="app-shot" key={screenshot.file}>
+                  <div className="shot-index"><span>{String(index + 1).padStart(2, "0")}</span><span>{screenshot.label}</span></div>
+                  <div className="shot-frame">
+                    <img
+                      src={`${basePath}/always_awake/screenshots/${screenshot.file}`}
+                      alt={`Always Awake ${screenshot.label.toLowerCase()} screen`}
+                      width="1440"
+                      height="2910"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </figure>
+              ))}
+            </div>
+            <div className="gallery-hint"><span>Swipe to explore</span><b aria-hidden="true">→</b></div>
           </section>
 
           <section className="availability" id="availability">
