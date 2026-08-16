@@ -27,14 +27,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const isLive = product.status === "Available";
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const screenshots = [
-    { file: "home_on.jpeg", label: "Awake / Light" },
-    { file: "home_on_dark.jpeg", label: "Awake / Dark" },
-    { file: "home_off.jpeg", label: "Ready / Light" },
-    { file: "home_off_dark.jpeg", label: "Ready / Dark" },
-    { file: "rules.jpeg", label: "Rules / Light" },
-    { file: "rules_dark.jpeg", label: "Rules / Dark" },
-    { file: "settings.jpeg", label: "Settings / Light" },
-    { file: "settings_dark.jpeg", label: "Settings / Dark" },
+    { file: "home_on_dark-left.png", label: "Awake Mode", slogan: "Stay focused.\nStay awake." },
+    { file: "home_off_dark-right.png", label: "Ready Mode", slogan: "Ready when\nyou need it." },
+    { file: "rules_dark-left.png", label: "Smart Rules", slogan: "Smart rules.\nSimple control." },
+    { file: "settings_dark-right.png", label: "Settings", slogan: "Tailored to\nyour workflow." },
   ];
   const softwareSchema = {
     "@context": "https://schema.org",
@@ -71,26 +67,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         <div className="product-device" aria-label={`${product.name} visual preview`}>
-          <div className="device-shell">
-            <div className="device-top"><span>9:41</span><i /></div>
-            <div className="device-content">
-              <small>INTELLIBUCKET / {product.index}</small>
-              {isLive ? (
-                <>
-                  <div className="device-orbit"><span>AWAKE</span></div>
-                  <strong>Screen timeout<br />is paused</strong>
-                  <div className="device-switch"><span>Stay awake</span><i /></div>
-                </>
-              ) : (
-                <>
-                  <div className="build-symbol"><i /><i /><i /></div>
-                  <strong>Currently<br />taking shape</strong>
-                  <div className="build-progress"><i /></div>
-                </>
-              )}
-            </div>
+          <div className="device-mockup">
+            <img
+              src={`${basePath}/always_awake/samsung-galaxy-s24-ultra-mockup/home_on_dark-portrait.png`}
+              alt={`${product.name} on Samsung Galaxy S24 Ultra`}
+              width="400"
+              height="870"
+              loading="eager"
+              decoding="async"
+            />
           </div>
-          <div className="device-coordinate">IB / PRODUCT SYSTEM / {product.index}</div>
         </div>
       </section>
 
@@ -114,26 +100,35 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <span className="kicker"><i /> Inside the app</span>
                 <h2 id="app-gallery-title">Clear in the light.<br /><em>Quiet in the dark.</em></h2>
               </div>
-              <p>One focused control, practical rules, and the settings that matter. Swipe through the real Always Awake interface.</p>
+              <p>One focused control, practical rules, and the settings that matter.</p>
             </div>
-            <div className="gallery-rail" aria-label="Always Awake app screenshots">
+            <div className="gallery-stack" aria-label="Always Awake app screenshots">
               {screenshots.map((screenshot, index) => (
-                <figure className="app-shot" key={screenshot.file}>
-                  <div className="shot-index"><span>{String(index + 1).padStart(2, "0")}</span><span>{screenshot.label}</span></div>
-                  <div className="shot-frame">
+                <div className={`gallery-item ${index % 2 === 0 ? "align-left" : "align-right"}`} key={screenshot.file}>
+                  <div className="gallery-item-content">
+                    <div className="gallery-item-label">
+                      <span className="gallery-item-number">{String(index + 1).padStart(2, "0")}</span>
+                      <span className="gallery-item-name">{screenshot.label}</span>
+                    </div>
+                    <div className="gallery-item-slogan">
+                      {screenshot.slogan.split("\n").map((line, i) => (
+                        <span key={i}>{line}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="gallery-item-frame">
                     <img
-                      src={`${basePath}/always_awake/screenshots/${screenshot.file}`}
+                      src={`${basePath}/always_awake/samsung-galaxy-s24-ultra-mockup/${screenshot.file}`}
                       alt={`Always Awake ${screenshot.label.toLowerCase()} screen`}
-                      width="1440"
-                      height="2910"
+                      width="400"
+                      height="870"
                       loading="lazy"
                       decoding="async"
                     />
                   </div>
-                </figure>
+                </div>
               ))}
             </div>
-            <div className="gallery-hint"><span>Swipe to explore</span><b aria-hidden="true">→</b></div>
           </section>
 
           <section className="availability" id="availability">
