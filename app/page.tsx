@@ -4,9 +4,9 @@ import { products } from "./products";
 import { SiteFooter, SiteHeader } from "./site-shell";
 
 export const metadata: Metadata = {
-  title: { absolute: "Intellibucket — Small software, sharply made" },
+  title: { absolute: "IntelliBucket — Small software, sharply made" },
   description:
-    "Intellibucket is an independent software studio building focused mobile apps and future desktop tools, including Always Awake.",
+    "IntelliBucket is an independent software studio building focused mobile apps and future desktop tools, including Always Awake.",
   alternates: { canonical: "/" },
 };
 
@@ -14,7 +14,7 @@ export default function Home() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Intellibucket",
+    name: "IntelliBucket",
     url: "https://intellibucket.com",
     email: "hello@intellibucket.com",
     description: "An independent software studio building focused digital tools.",
@@ -46,7 +46,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="signal-stage" aria-label="Intellibucket product system illustration">
+        <div className="signal-stage" aria-label="IntelliBucket product system illustration">
           <div className="stage-window window-one">
             <div className="window-bar"><i /><i /><i /><span>01 / LIVE</span></div>
             <div className="awake-orbit">
@@ -103,7 +103,7 @@ export default function Home() {
           <span className="note-label">A note from the bucket</span>
           <p>
             We believe the best utility is the one you notice once—then simply trust.
-            Intellibucket builds focused products with a clear job, a clear interface,
+            IntelliBucket builds focused products with a clear job, a clear interface,
             and room to breathe.
           </p>
         </div>

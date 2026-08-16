@@ -3,10 +3,7 @@ import Link from "next/link";
 export function BrandMark() {
   return (
     <span className="brand-mark" aria-hidden="true">
-      <i />
-      <i />
-      <i />
-      <i />
+      <img src="/logo-mark.png" alt="" width="28" height="28" />
     </span>
   );
 }
@@ -14,9 +11,9 @@ export function BrandMark() {
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="Intellibucket home">
+      <Link className="brand" href="/" aria-label="IntelliBucket home">
         <BrandMark />
-        <span>Intellibucket</span>
+        <span>IntelliBucket</span>
       </Link>
       <nav className="main-nav" aria-label="Main navigation">
         <Link href="/#products">Products</Link>
@@ -36,7 +33,7 @@ export function SiteFooter() {
       <div>
         <Link className="brand footer-brand" href="/">
           <BrandMark />
-          <span>Intellibucket</span>
+          <span>IntelliBucket</span>
         </Link>
         <p>Small software. Sharply made.</p>
       </div>
@@ -57,7 +54,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} Intellibucket</span>
+        <span>© {new Date().getFullYear()} IntelliBucket</span>
         <span>Independent software studio</span>
       </div>
     </footer>

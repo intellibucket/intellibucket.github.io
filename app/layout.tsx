@@ -27,25 +27,29 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: baseUrl,
-    title: { default: "Intellibucket", template: "%s — Intellibucket" },
-    description: "Focused mobile apps and desktop tools from Intellibucket.",
-    applicationName: "Intellibucket",
-    authors: [{ name: "Intellibucket", url: "https://intellibucket.com" }],
-    creator: "Intellibucket",
+    title: { default: "IntelliBucket", template: "%s — IntelliBucket" },
+    description: "Focused mobile apps and desktop tools from IntelliBucket.",
+    applicationName: "IntelliBucket",
+    authors: [{ name: "IntelliBucket", url: "https://intellibucket.com" }],
+    creator: "IntelliBucket",
     openGraph: {
       type: "website",
-      siteName: "Intellibucket",
-      title: "Intellibucket — Small software, sharply made",
+      siteName: "IntelliBucket",
+      title: "IntelliBucket — Small software, sharply made",
       description: "Focused apps for the little moments technology should handle better.",
-      images: [{ url: new URL("/og.png", baseUrl).toString(), width: 1200, height: 630, alt: "Intellibucket — Small software. Sharply made." }],
+      images: [{ url: new URL("/og.png", baseUrl).toString(), width: 1200, height: 630, alt: "IntelliBucket — Small software. Sharply made." }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Intellibucket — Small software, sharply made",
+      title: "IntelliBucket — Small software, sharply made",
       description: "Focused apps for the little moments technology should handle better.",
       images: [new URL("/og.png", baseUrl).toString()],
     },
-    icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+    icons: {
+      icon: [{ url: "/logo-mark.png", type: "image/png" }],
+      shortcut: "/logo-mark.png",
+      apple: "/logo-mark.png",
+    },
   };
 }
 

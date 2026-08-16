@@ -22,13 +22,13 @@ async function render(path = "/") {
   );
 }
 
-test("server-renders the Intellibucket home page", async () => {
+test("server-renders the IntelliBucket home page", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Intellibucket — Small software, sharply made<\/title>/i);
+  assert.match(html, /<title>IntelliBucket — Small software, sharply made<\/title>/i);
   assert.match(html, /Small software\./);
   assert.match(html, /Always Awake/);
   assert.match(html, /YMessage/);

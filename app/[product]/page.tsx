@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     title: product.name,
     description: product.summary,
     alternates: { canonical: `/${product.slug}` },
-    openGraph: { title: `${product.name} — Intellibucket`, description: product.summary },
+    openGraph: { title: `${product.name} — IntelliBucket`, description: product.summary },
   };
 }
 
@@ -33,7 +33,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     operatingSystem: "iOS, Android",
     description: product.summary,
     url: `https://intellibucket.com/${product.slug}`,
-    author: { "@type": "Organization", name: "Intellibucket" },
+    author: { "@type": "Organization", name: "IntelliBucket" },
   };
 
   return (
