@@ -151,7 +151,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <section className="policy-strip">
         <p>Clear products deserve clear policies.</p>
-        <div><Link href={`/${product.slug}/privacy`}>Privacy policy <span>↗</span></Link><Link href={`/${product.slug}/terms`}>Terms & conditions <span>↗</span></Link></div>
+        <div>
+          <Link href={`/${product.slug}/privacy`}>Privacy policy <span>↗</span></Link>
+          {product.slug !== "alwaysawake" && (
+            <Link href={`/${product.slug}/terms`}>Terms & conditions <span>↗</span></Link>
+          )}
+        </div>
       </section>
       <SiteFooter />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
