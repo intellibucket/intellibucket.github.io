@@ -46,3 +46,4 @@ After pushing this project to GitHub:
 - `npm run build:pages`: create the GitHub Pages export
 - `npm test`: build and verify rendered routes
 - `npm run db:generate`: generate Drizzle migrations after schema changes
+# intellibucket.github.io
