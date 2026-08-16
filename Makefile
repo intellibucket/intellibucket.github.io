@@ -2,13 +2,14 @@
 
 NPM ?= npm
 
-.PHONY: help install dev build start lint test check db-generate
+.PHONY: help install dev build pages-build start lint test check db-generate
 
 help:
 	@echo "Available commands:"
 	@echo "  make install      Install locked dependencies"
 	@echo "  make dev          Start the development server"
 	@echo "  make build        Create a production build"
+	@echo "  make pages-build  Create a GitHub Pages export"
 	@echo "  make start        Start the production server"
 	@echo "  make lint         Run code quality checks"
 	@echo "  make test         Build and run the test suite"
@@ -23,6 +24,9 @@ dev:
 
 build:
 	$(NPM) run build
+
+pages-build:
+	$(NPM) run build:pages
 
 start:
 	$(NPM) run start

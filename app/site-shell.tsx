@@ -1,9 +1,11 @@
 import Link from "next/link";
 
 export function BrandMark() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
   return (
     <span className="brand-mark" aria-hidden="true">
-      <img src="/logo-mark.png" alt="" width="28" height="28" />
+      <img src={`${basePath}/logo-mark.png`} alt="" width="28" height="28" />
     </span>
   );
 }
