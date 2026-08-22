@@ -4,13 +4,13 @@ import { SiteFooter, SiteHeader } from "./site-shell";
 
 type PolicySection = { title: string; paragraphs: string[] };
 
-export function PolicyPage({ product, label, intro, sections }: { product: Product; label: string; intro: string; sections: PolicySection[] }) {
+export function PolicyPage({ product, label, intro, sections, updated = "20 August 2026" }: { product: Product; label: string; intro: string; sections: PolicySection[]; updated?: string }) {
   return (
     <main className="legal-page">
       <SiteHeader />
       <section className="legal-hero">
         <div><span className="kicker"><i /> {product.name}</span><h1>{label}</h1></div>
-        <div className="legal-intro"><p>{intro}</p><span>Last updated / 16 August 2026</span></div>
+        <div className="legal-intro"><p>{intro}</p><span>Last updated / {updated}</span></div>
       </section>
       <section className="legal-body">
         <aside>
@@ -27,7 +27,7 @@ export function PolicyPage({ product, label, intro, sections }: { product: Produ
           ))}
         </div>
       </section>
-      <section className="legal-contact"><span>Still have a question?</span><a href="mailto:privacy@intellibucket.com">privacy@intellibucket.com ↗</a></section>
+      <section className="legal-contact"><span>Still have a question?</span><a href="mailto:mammadli.vugar@hotmail.com">mammadli.vugar@hotmail.com ↗</a></section>
       <SiteFooter />
     </main>
   );

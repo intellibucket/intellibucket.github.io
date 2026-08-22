@@ -60,7 +60,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
           ) : (
             <div className="hero-actions">
-              <a className="button button-primary" href={`mailto:hello@intellibucket.com?subject=${encodeURIComponent(`${product.name} early access`)}`}>Ask about early access <span aria-hidden="true">↗</span></a>
+              <a className="button button-primary" href={`mailto:mammadli.vugar@hotmail.com?subject=${encodeURIComponent(`${product.name} early access`)}`}>Ask about early access <span aria-hidden="true">↗</span></a>
               <Link className="text-link light" href="/#products">All products <span aria-hidden="true">←</span></Link>
             </div>
           )}

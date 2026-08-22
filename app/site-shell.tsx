@@ -20,7 +20,7 @@ export function SiteHeader() {
       <nav className="main-nav" aria-label="Main navigation">
         <Link href="/#products">Products</Link>
         <Link href="/#studio">Studio</Link>
-        <a href="mailto:hello@intellibucket.com">Contact</a>
+        <a href="mailto:mammadli.vugar@hotmail.com">Contact</a>
       </nav>
       <Link className="header-cta" href="/alwaysawake">
         Always Awake <span aria-hidden="true">↗</span>
@@ -52,7 +52,7 @@ export function SiteFooter() {
         </div>
         <div>
           <span>Say hello</span>
-          <a href="mailto:hello@intellibucket.com">hello@intellibucket.com</a>
+          <a href="mailto:mammadli.vugar@hotmail.com">mammadli.vugar@hotmail.com</a>
         </div>
       </div>
       <div className="footer-bottom">

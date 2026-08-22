@@ -16,7 +16,7 @@ export default function Home() {
     "@type": "Organization",
     name: "IntelliBucket",
     url: "https://intellibucket.com",
-    email: "hello@intellibucket.com",
+    email: "mammadli.vugar@hotmail.com",
     description: "An independent software studio building focused digital tools.",
   };
 
